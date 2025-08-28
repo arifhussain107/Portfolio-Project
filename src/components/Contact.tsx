@@ -278,7 +278,7 @@ const Contact: React.FC = () => {
                 transition={{ delay: 0.3, duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <label htmlFor="message" className="block text sm font-medium text-gray-700 mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
                   Message
                 </label>
                 <div className="relative">
