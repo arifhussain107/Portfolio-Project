@@ -7,13 +7,10 @@
     "node": ">=18.0.0",
     "npm": ">=8.0.0"
   },
-  "homepage": "https://arifhussain107.github.io/Portfolio-Project",
   "scripts": {
     "dev": "vite --host",
     "build": "vite build",
-    "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "framer-motion": "^10.16.4",
