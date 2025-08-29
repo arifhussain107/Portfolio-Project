@@ -1,6 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Code, Zap } from 'lucide-react'
+import { ChevronDown, Code, Zap, Award } from 'lucide-react'
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -20,8 +20,25 @@ const Hero: React.FC = () => {
     document.body.removeChild(link)
   }
 
+  const certificates = [
+    { label: 'Udemy', path: '/udemy-certificate.pdf', filename: 'Arif_Hussain_Udemy_Certificate.pdf' }
+  ]
+
+  const [selectedCertificateIndex, setSelectedCertificateIndex] = useState(0)
+  const [showCertificates, setShowCertificates] = useState(false)
+
+  const downloadCertificate = () => {
+    const selected = certificates[selectedCertificateIndex]
+    const link = document.createElement('a')
+    link.href = selected.path
+    link.download = selected.filename
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
-    <section id="home" className="section-padding pt-32 pb-20 bg-gradient-to-br from-accent-blue/30 via-white to-accent-mint/30">
+    <section id="home" className="section-padding pt-28 pb-10 bg-gradient-to-br from-accent-blue/30 via-white to-accent-mint/30">
       <div className="container-custom">
         <div className="text-center max-w-4xl mx-auto">
           {/* Profile Picture */}
@@ -94,6 +111,35 @@ const Hero: React.FC = () => {
               <Zap size={20} />
               Download CV
             </motion.button>
+
+            {showCertificates && (
+              <>
+                {/* Certificate selector */}
+                <div className="flex items-center gap-2">
+                  <label htmlFor="certificateSelect" className="text-sm text-gray-700">Certificate</label>
+                  <select
+                    id="certificateSelect"
+                    className="border border-gray-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+                    value={selectedCertificateIndex}
+                    onChange={(e) => setSelectedCertificateIndex(parseInt(e.target.value))}
+                  >
+                    {certificates.map((c, idx) => (
+                      <option key={c.label} value={idx}>{c.label}</option>
+                    ))}
+                  </select>
+                </div>
+
+                <motion.button
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                  onClick={downloadCertificate}
+                  className="btn-secondary flex items-center gap-2"
+                >
+                  <Award size={20} />
+                  Download Certificate
+                </motion.button>
+              </>
+            )}
           </motion.div>
 
           {/* Scroll Indicator */}
@@ -101,12 +147,13 @@ const Hero: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1, duration: 0.6 }}
-            className="mt-16"
+            className="mt-2"
           >
             <motion.div
-              animate={{ y: [0, 10, 0] }}
+              animate={{ y: [0, 10, 0], rotate: showCertificates ? 180 : 0 }}
               transition={{ repeat: Infinity, duration: 2 }}
-              className="inline-block"
+              className="inline-block cursor-pointer"
+              onClick={() => setShowCertificates(prev => !prev)}
             >
               <ChevronDown size={24} className="text-gray-400" />
             </motion.div>

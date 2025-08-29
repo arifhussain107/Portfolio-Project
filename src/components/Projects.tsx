@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ExternalLink, Github, Code, Calculator, Droplets, Brain, TrendingUp, FileText, Globe } from 'lucide-react'
+import { Calculator, Droplets, Brain, TrendingUp, FileText, Globe } from 'lucide-react'
 
 const Projects: React.FC = () => {
   const projects = [
@@ -83,7 +83,7 @@ const Projects: React.FC = () => {
   }
 
   return (
-    <section id="projects" className="section-padding bg-white">
+    <section id="projects" className="section-padding pt-4 pb-2 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -101,7 +101,7 @@ const Projects: React.FC = () => {
         </motion.div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -144,27 +144,7 @@ const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Project Links */}
-              <div className="flex items-center gap-3 pt-4 border-t border-gray-100">
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.github}
-                  className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-300 text-sm font-medium"
-                >
-                  <Github size={16} />
-                  Code
-                </motion.a>
-                <motion.a
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  href={project.live}
-                  className="flex items-center gap-2 text-gray-600 hover:text-primary-600 transition-colors duration-300 text-sm font-medium"
-                >
-                  <ExternalLink size={16} />
-                  Demo
-                </motion.a>
-              </div>
+              {/* Project Links removed as requested */}
             </motion.div>
           ))}
         </div>
@@ -186,22 +166,15 @@ const Projects: React.FC = () => {
               Check back regularly to see my latest work and developments.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
+              <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                href="#projects"
                 className="btn-primary flex items-center gap-2"
+                aria-label="View all projects"
               >
-                <Github size={20} />
                 View All Projects
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn-secondary flex items-center gap-2"
-              >
-                <Code size={20} />
-                Request Custom Project
-              </motion.button>
+              </motion.a>
             </div>
           </div>
         </motion.div>

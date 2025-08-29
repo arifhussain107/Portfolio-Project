@@ -22,7 +22,7 @@ const Experience: React.FC = () => {
   ]
 
   return (
-    <section id="experience" className="section-padding bg-accent-blue/20">
+    <section id="experience" className="section-padding pt-10 pb-8 bg-accent-blue/20">
       <div className="container-custom">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -75,7 +75,7 @@ const Experience: React.FC = () => {
                 <div className="flex-shrink-0">
                   <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-accent-mint text-green-700">
                     <CheckCircle size={14} className="mr-1" />
-                    Active
+                    Complete
                   </span>
                 </div>
               </div>

@@ -95,7 +95,7 @@ const Contact: React.FC = () => {
   ]
 
   return (
-    <section id="contact" className="section-padding bg-accent-blue/20">
+    <section id="contact" className="section-padding pt-8 bg-accent-blue/20">
       <div className="container-custom">
         <motion.div
           initial={{ y: 30, opacity: 0 }}

@@ -28,7 +28,7 @@ const About: React.FC = () => {
   ]
 
   return (
-    <section id="about" className="section-padding bg-white">
+    <section id="about" className="section-padding pt-10 pb-8 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ y: 30, opacity: 0 }}

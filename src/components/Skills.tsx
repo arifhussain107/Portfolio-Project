@@ -22,7 +22,7 @@ const Skills: React.FC = () => {
   ]
 
   return (
-    <section id="skills" className="section-padding bg-white">
+    <section id="skills" className="section-padding pb-4 bg-white">
       <div className="container-custom">
         <motion.div
           initial={{ y: 30, opacity: 0 }}
@@ -131,7 +131,7 @@ const Skills: React.FC = () => {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="mt-16 text-center"
+          className="mt-8 text-center"
         >
           <div className="bg-gradient-to-r from-accent-blue/30 to-accent-mint/30 rounded-2xl p-8">
             <h3 className="text-2xl font-semibold text-gray-900 mb-4">
