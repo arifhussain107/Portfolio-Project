@@ -72,7 +72,7 @@ const Projects: React.FC = () => {
       technologies: ['Python', 'Data Analysis', 'Pandas', 'Matplotlib'],
       status: 'Completed',
       github: '#',
-      live: '#'
+      live: 'https://stock-market-prediction-app-mauve.vercel.app/'
     }
   ]
 
@@ -143,6 +143,23 @@ const Projects: React.FC = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Live Demo Button - Only for Stock Prediction App */}
+              {project.title === 'Stock Prediction App' && (
+                <div className="mt-4">
+                  <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href={project.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-lg font-medium hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                  >
+                    <Globe size={16} />
+                    Live Demo
+                  </motion.a>
+                </div>
+              )}
 
               {/* Project Links removed as requested */}
             </motion.div>

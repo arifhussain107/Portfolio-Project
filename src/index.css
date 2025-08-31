@@ -26,10 +26,24 @@
   }
   
   .btn-secondary {
-    @apply bg-accent-blue hover:bg-primary-100 text-primary-700 font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95;
+    @apply bg-blue-100 hover:bg-primary-100 text-primary-700 font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95;
   }
   
   .card {
     @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+}
+
+@layer utilities {
+  .bg-accent-blue {
+    background-color: #e0f2fe;
+  }
+  
+  .bg-accent-mint {
+    background-color: #f0fdf4;
+  }
+  
+  .bg-accent-blush {
+    background-color: #fdf2f8;
   }
 }
