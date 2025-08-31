@@ -62,7 +62,7 @@ const Projects: React.FC = () => {
       technologies: ['Python', 'AI/ML', 'Content Generation', 'Creative Tools'],
       status: 'Completed',
       github: '#',
-      live: '#'
+      live: 'https://ai-reel-genreated-video.vercel.app/'
     },
     {
       title: 'Stock Prediction App',
@@ -144,8 +144,8 @@ const Projects: React.FC = () => {
                 </div>
               </div>
 
-              {/* Live Demo Button - Only for Stock Prediction App */}
-              {project.title === 'Stock Prediction App' && (
+              {/* Live Demo Button - Only for Stock Prediction App and AI-Powered Reel Generator */}
+              {(project.title === 'Stock Prediction App' || project.title === 'AI-Powered Reel Generator') && (
                 <div className="mt-4">
                   <motion.a
                     whileHover={{ scale: 1.05 }}
@@ -153,7 +153,11 @@ const Projects: React.FC = () => {
                     href={project.live}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500 to-emerald-600 text-white rounded-lg font-medium hover:from-emerald-600 hover:to-emerald-700 transition-all duration-300 shadow-md hover:shadow-lg"
+                    className={`inline-flex items-center gap-2 px-4 py-2 text-white rounded-lg font-medium transition-all duration-300 shadow-md hover:shadow-lg ${
+                      project.title === 'Stock Prediction App' 
+                        ? 'bg-gradient-to-r from-emerald-500 to-emerald-600 hover:from-emerald-600 hover:to-emerald-700'
+                        : 'bg-gradient-to-r from-pink-500 to-pink-600 hover:from-pink-600 hover:to-pink-700'
+                    }`}
                   >
                     <Globe size={16} />
                     Live Demo
