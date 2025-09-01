@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
-import { ChevronDown, Code, Zap, Award } from 'lucide-react'
+import { Code, Zap, Award } from 'lucide-react'
 
 const Hero: React.FC = () => {
   const scrollToProjects = () => {
@@ -25,7 +25,7 @@ const Hero: React.FC = () => {
   ]
 
   const [selectedCertificateIndex, setSelectedCertificateIndex] = useState(0)
-  const [showCertificates, setShowCertificates] = useState(false)
+  const [showCertificates] = useState(true)
 
   const downloadCertificate = () => {
     const selected = certificates[selectedCertificateIndex]
@@ -142,22 +142,7 @@ const Hero: React.FC = () => {
             )}
           </motion.div>
 
-          {/* Scroll Indicator */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1, duration: 0.6 }}
-            className="mt-2"
-          >
-            <motion.div
-              animate={{ y: [0, 10, 0], rotate: showCertificates ? 180 : 0 }}
-              transition={{ repeat: Infinity, duration: 2 }}
-              className="inline-block cursor-pointer"
-              onClick={() => setShowCertificates(prev => !prev)}
-            >
-              <ChevronDown size={24} className="text-gray-400" />
-            </motion.div>
-          </motion.div>
+
         </div>
       </div>
     </section>
