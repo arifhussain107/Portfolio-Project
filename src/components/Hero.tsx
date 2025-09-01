@@ -37,7 +37,7 @@ const Hero: React.FC = () => {
   }
 
   return (
-    <section id="home" className="section-padding pt-28 pb-10 bg-gradient-to-br from-accent-blue/30 via-white to-accent-mint/30">
+    <section id="home" className="section-padding pt-28 pb-4 bg-gradient-to-br from-accent-blue/30 via-white to-accent-mint/30">
       <div className="container-custom">
         <div className="text-center max-w-4xl mx-auto">
           {/* Profile Picture */}

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { GraduationCap, Calendar, MapPin } from 'lucide-react'
+import { GraduationCap, Calendar, MapPin, ChevronDown } from 'lucide-react'
 
 const About: React.FC = () => {
   const education = [
@@ -28,8 +28,25 @@ const About: React.FC = () => {
   ]
 
   return (
-    <section id="about" className="section-padding pt-10 pb-8 bg-white">
+    <section id="about" className="section-padding pt-4 pb-8 bg-white">
       <div className="container-custom">
+        {/* Down Arrow Animation */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-8"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+            className="inline-block"
+          >
+            <ChevronDown size={32} className="text-primary-500" />
+          </motion.div>
+        </motion.div>
+
         <motion.div
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
