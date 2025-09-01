@@ -25,7 +25,6 @@ const Hero: React.FC = () => {
   ]
 
   const [selectedCertificateIndex, setSelectedCertificateIndex] = useState(0)
-  const [showCertificates] = useState(true)
 
   const downloadCertificate = () => {
     const selected = certificates[selectedCertificateIndex]
@@ -112,37 +111,31 @@ const Hero: React.FC = () => {
               Download CV
             </motion.button>
 
-            {showCertificates && (
-              <>
-                {/* Certificate selector */}
-                <div className="flex items-center gap-2">
-                  <label htmlFor="certificateSelect" className="text-sm text-gray-700">Certificate</label>
-                  <select
-                    id="certificateSelect"
-                    className="border border-gray-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
-                    value={selectedCertificateIndex}
-                    onChange={(e) => setSelectedCertificateIndex(parseInt(e.target.value))}
-                  >
-                    {certificates.map((c, idx) => (
-                      <option key={c.label} value={idx}>{c.label}</option>
-                    ))}
-                  </select>
-                </div>
+            {/* Certificate selector */}
+            <div className="flex items-center gap-2">
+              <label htmlFor="certificateSelect" className="text-sm text-gray-700">Certificate</label>
+              <select
+                id="certificateSelect"
+                className="border border-gray-300 rounded-md px-2 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-primary-500"
+                value={selectedCertificateIndex}
+                onChange={(e) => setSelectedCertificateIndex(parseInt(e.target.value))}
+              >
+                {certificates.map((c, idx) => (
+                  <option key={c.label} value={idx}>{c.label}</option>
+                ))}
+              </select>
+            </div>
 
-                <motion.button
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                  onClick={downloadCertificate}
-                  className="btn-secondary flex items-center gap-2"
-                >
-                  <Award size={20} />
-                  Download Certificate
-                </motion.button>
-              </>
-            )}
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={downloadCertificate}
+              className="btn-secondary flex items-center gap-2"
+            >
+              <Award size={20} />
+              Download Certificate
+            </motion.button>
           </motion.div>
-
-
         </div>
       </div>
     </section>
