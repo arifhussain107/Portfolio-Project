@@ -21,7 +21,8 @@ const Hero: React.FC = () => {
   }
 
   const certificates = [
-    { label: 'Udemy', path: '/udemy-certificate.pdf', filename: 'Arif_Hussain_Udemy_Certificate.pdf' }
+    { label: 'Udemy', path: '/udemy-certificate.pdf', filename: 'Arif_Hussain_Udemy_Certificate.pdf' },
+    { label: 'Internship', path: '/Internship Certificate Arif Hussain.png', filename: 'Arif_Hussain_Internship_Certificate.png' }
   ]
 
   const [selectedCertificateIndex, setSelectedCertificateIndex] = useState(0)
